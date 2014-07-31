@@ -13,19 +13,19 @@ class MagpieController < ApplicationController
       seeker.save
     else
       seeker.first.add_target params[:target]
-    end 
+    end
 
     if target.count > 0
       target_targets = target.first.targets
       for target_target in target_targets
         if target_target == params[:seeker]
-          render "success"
+          render json: { status: "success" }, status: 200
           return
         end
       end
-      render "fail"
+      render json: { status: "fail" }, status: 200
     else
-      render "empty"
+      render json: { status: "empty" }, status: 200
     end
   end
 
