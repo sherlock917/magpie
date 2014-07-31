@@ -1,3 +1,70 @@
 // Place all the styles related to the magpie controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$mainColor: #f47;
+$mainWhite: #fff;
+$mainGrey: #fde;
+
+$mainFont: #fff;
+$inputFont: #f7a;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: "微软雅黑", sans-serif, Helvetica;
+  font-weight: 100;
+}
+
+body {
+  background: $mainColor;
+}
+
+#main {
+  width: 90%;
+  max-width: 800px;
+  height: 20em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.input-row {
+  margin: 3em auto 0 auto;
+  text-align: center;
+}
+
+.input {
+  width: 80%;
+  height: 2em;
+  padding: 0.5em 1em;
+  background: $mainWhite;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 0.5em;
+  color: $inputFont;
+}
+
+#submit {
+  width: 50%;
+  height: 2.5em;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  display: block;
+  background: $mainWhite;
+  font-size: 1em;
+  color: $mainColor;
+  border-radius: 0.5em;
+  transition: opacity 0.2s;
+}
+#submit:active {
+  opacity: 0.8;
+}

@@ -10,15 +10,17 @@ $(document).on('ready', function () {
     var marco = $('#marco').val();
     var polo = $('#polo').val();
 
-    $.get('/seek/' + marco + '/' + polo, function(data) {
-      if (data.status == 'empty') {
-        alert('empty');
-      } else if (data.status == 'fail') {
-        alert('fail');
-      } else if (data.status == 'success') {
-        alert('success');
-      }
-    });
+    if (marco != '' && polo != '') {
+      $.get('/seek/' + marco + '/' + polo, function(data) {
+        if (data.status == 'empty') {
+          alert('empty');
+        } else if (data.status == 'fail') {
+          alert('fail');
+        } else if (data.status == 'success') {
+          alert('success');
+        }
+      });
+    }
 
     return false;
   });
