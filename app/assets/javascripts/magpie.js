@@ -3,7 +3,7 @@ $(document).on('ready', function () {
   var img  = 'http://scauhci.qiniudn.com/magpie.jpg';
   var link = 'http://magpie.scauhci.org/';
   var appid = '';
-  var title = '这里是标题';
+  var title = '';
   var desc = '这里是描述';
 
   $('#submit').on('click', function () {
@@ -15,19 +15,30 @@ $(document).on('ready', function () {
       $.get('/seek/' + marco + '/' + polo, function(data) {
         if (data.status == 'empty') {
           $('#message-content').html('TA还没来过<br>分享到<em>朋友圈</em><br>让更多的TA知道');
+          title = '来这里找找你想一起过七夕的那个TA'
         } else if (data.status == 'fail') {
           if (data.followers > 0) {
             $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>看看是TA是谁');
           } else {
             $('#message-content').html('TA好像对你没XING趣<br>分享到<em>朋友圈</em>然后洗洗睡吧');
           }
+          title = '我在这里没找到一起过七夕的那个TA，但是你也许可以！';
         } else if (data.status == 'success') {
           $('#message-content').html('<em>TA也对你有XING趣！</em><br>赶紧行动约TA过七夕吧！<br>然后分享到<em>朋友圈</em>炫耀一下');
+          title = '我在这里找到了陪我过七夕的那个TA！';
         }
         $('#message').show().animate({opacity : 1}, 500);
       });
     }
 
+    return false;
+  });
+
+  $('#retry').on('click', function () {
+    $('#message').animate({opacity : 0}, 500, function () {
+      $(this).hide();
+      $('#polo').val('');
+    });
     return false;
   });
 

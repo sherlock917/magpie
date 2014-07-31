@@ -67,7 +67,7 @@ body {
   margin: 0 auto 1em auto;
   display: block;
   background: $mainWhite;
-  font-size: 0.7em;
+  font-size: 0.9em;
   color: $mainColor;
   border-radius: 0.6em;
   transition: opacity 0.2s;
@@ -78,7 +78,7 @@ body {
 
 #describtion {
   color: $mainWhite;
-  font-size: 0.5em;
+  font-size: 0.8em;
 }
 
 #message {
@@ -93,10 +93,10 @@ body {
 }
 
 .message-main {
-  width: 90%;
+  width: 80%;
   max-width: 800px;
   height: 15em;
-  padding: 2em;
+  padding: 2em 1em;
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -110,13 +110,14 @@ body {
 }
 
 #message-content {
-  font-size: 1.1em;
-  margin: 0 auto 2.5em auto;
+  font-size: 1em;
+  margin: 0 auto 1em auto;
   line-height: 2em;
   color: #555;
 }
 
 #message-content em{
+  font-size: 1.3em;
   color: $mainColor;
   font-weight: bolder;
 }
