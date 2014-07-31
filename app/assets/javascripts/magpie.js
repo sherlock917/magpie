@@ -18,8 +18,8 @@ $(document).on('ready', function () {
           title = '来这里找找你想一起过七夕的那个TA！'
         } else if (data.status == 'fail') {
           if (data.followers > 0) {
-            $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>让TA加入');
-            title = '我在这里没找到一起过七夕的那个TA，但是有' + data.followers + '个TA在关注我！你呢？';
+            $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA想约你<br>分享到<em>朋友圈</em>让TA加入');
+            title = '我在这里没找到一起过七夕的那个TA，但是有' + data.followers + '个TA想约我！你呢？';
           } else {
             $('#message-content').html('TA好像对你没XING趣<br>分享到<em>朋友圈</em>然后洗洗睡吧');
             title = '我在这里没找到一起过七夕的那个TA，但是你也许可以！';
