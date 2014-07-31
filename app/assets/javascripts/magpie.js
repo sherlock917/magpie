@@ -19,10 +19,11 @@ $(document).on('ready', function () {
         } else if (data.status == 'fail') {
           if (data.followers > 0) {
             $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>让TA加入');
+            title = '我在这里没找到一起过七夕的那个TA，但是有' + data.followers + '个TA在关注我！你呢？';
           } else {
             $('#message-content').html('TA好像对你没XING趣<br>分享到<em>朋友圈</em>然后洗洗睡吧');
+            title = '我在这里没找到一起过七夕的那个TA，但是你也许可以！';
           }
-          title = '我在这里没找到一起过七夕的那个TA，但是你也许可以！';
         } else if (data.status == 'success') {
           $('#message-content').html('<em>TA也对你有XING趣！</em><br>赶紧行动约TA过七夕吧！<br>然后分享到<em>朋友圈</em>炫耀一下');
           title = '我在这里找到了陪我过七夕的那个TA！';
