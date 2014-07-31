@@ -1,7 +1,14 @@
 class MagpieController < ApplicationController
 
   def index
-    
+    stat = Stat.all
+    if stat.count <= 0
+      stat = Stat.new()
+      stat.save
+      stat.add_view_count
+    else
+      stat.first.add_view_count
+    end
   end
 
   def seek
@@ -28,6 +35,11 @@ class MagpieController < ApplicationController
     else
       render json: { status: "empty" }, status: 200
     end
+  end
+
+  def stat
+    @view_count = Stat.all.first.view_count
+    @user_count = Seeker.all.count
   end
 
 end

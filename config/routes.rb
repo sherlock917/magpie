@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'magpie#index'
 
   get 'seek/:seeker/:target' => 'magpie#seek'
+  get 'stat' => 'magpie#stat'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
