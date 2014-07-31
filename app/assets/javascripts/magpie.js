@@ -15,10 +15,10 @@ $(document).on('ready', function () {
       $.get('/seek/' + marco + '/' + polo, function(data) {
         if (data.status == 'empty') {
           $('#message-content').html('TA还没来过<br>分享到<em>朋友圈</em><br>让更多的TA知道');
-          title = '来这里找找你想一起过七夕的那个TA'
+          title = '来这里找找你想一起过七夕的那个TA！'
         } else if (data.status == 'fail') {
           if (data.followers > 0) {
-            $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>看看是TA是谁');
+            $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>让TA加入');
           } else {
             $('#message-content').html('TA好像对你没XING趣<br>分享到<em>朋友圈</em>然后洗洗睡吧');
           }
