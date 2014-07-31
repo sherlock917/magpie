@@ -12,12 +12,14 @@ class MagpieController < ApplicationController
   end
 
   def seek
+    isNew = false
     seeker = Seeker.where(uid: params[:seeker])
     target = Seeker.where(uid: params[:target])
 
     if seeker.count <= 0
       seeker = Seeker.new(uid: params[:seeker], targets: [params[:target]])
       seeker.save
+      isNew = true
     else
       seeker.first.add_target params[:target]
     end
@@ -31,7 +33,11 @@ class MagpieController < ApplicationController
           return
         end
       end
-      render json: { status: "fail" }, status: 200
+      if isNew
+        render json: { status: "fail", followers: seeker.followers.count }, status: 200
+      else
+        render json: { status: "fail", followers: seeker.first.followers.count }, status: 200
+      end
     else
       render json: { status: "empty" }, status: 200
     end

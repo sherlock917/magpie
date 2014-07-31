@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$mainColor: #f47;
+$mainColor: #ed385b;
 $mainWhite: #fff;
 $mainGrey: #fde;
 
 $mainFont: #fff;
-$inputFont: #f7a;
+$inputFont: #ed385b;
 
 * {
   margin: 0;
@@ -16,6 +16,7 @@ $inputFont: #f7a;
   outline: none;
   background: none;
   list-style: none;
+  font-style: normal;
   text-decoration: none;
   font-family: "微软雅黑", sans-serif, Helvetica;
   font-weight: 100;
@@ -28,13 +29,20 @@ body {
 #main {
   width: 90%;
   max-width: 800px;
-  height: 20em;
+  height: 30em;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
+}
+
+#logo {
+  width: 40%;
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
 }
 
 .input-row {
@@ -54,17 +62,66 @@ body {
 }
 
 #submit {
-  width: 50%;
-  height: 2.5em;
-  padding: 0.5em 1em;
-  margin: 0 auto;
+  width: 70%;
+  padding: 1em 1em;
+  margin: 0 auto 1em auto;
   display: block;
   background: $mainWhite;
-  font-size: 1em;
+  font-size: 0.7em;
   color: $mainColor;
-  border-radius: 0.5em;
+  border-radius: 0.6em;
   transition: opacity 0.2s;
 }
 #submit:active {
   opacity: 0.8;
+}
+
+#describtion {
+  color: $mainWhite;
+  font-size: 0.5em;
+}
+
+#message {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  opacity: 0;
+}
+
+.message-main {
+  width: 90%;
+  max-width: 800px;
+  height: 15em;
+  padding: 2em;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: $mainWhite;
+  border-radius: 1em;
+  text-align: center;
+}
+
+#message-content {
+  font-size: 1.1em;
+  margin: 0 auto 2.5em auto;
+  line-height: 2em;
+  color: #555;
+}
+
+#message-content em{
+  color: $mainColor;
+  font-weight: bolder;
+}
+
+#retry {
+  font-size: 1.3em;
+  color: $mainColor;
 }

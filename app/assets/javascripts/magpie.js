@@ -1,24 +1,30 @@
 $(document).on('ready', function () {
 
-  var img  = 'http://www.baidu.com/img/baidu_sylogo1.gif';
-  var link = 'http://www.baidu.com/';
+  var img  = 'http://scauhci.qiniudn.com/magpie.jpg';
+  var link = 'http://magpie.scauhci.org/';
   var appid = '';
-  var title = '';
-  var desc = '';
+  var title = '这里是标题';
+  var desc = '这里是描述';
 
   $('#submit').on('click', function () {
     var marco = $('#marco').val();
     var polo = $('#polo').val();
 
     if (marco != '' && polo != '') {
+      $(this).text('努力寻找中。。。');
       $.get('/seek/' + marco + '/' + polo, function(data) {
         if (data.status == 'empty') {
-          alert('empty');
+          $('#message-content').html('TA还没来过<br>分享到<em>朋友圈</em><br>让更多的TA知道');
         } else if (data.status == 'fail') {
-          alert('fail');
+          if (data.followers > 0) {
+            $('#message-content').html('TA好像对你没XING趣<br>但是有<em>' + data.followers + '</em>个TA关注了你<br>分享到<em>朋友圈</em>看看是TA是谁');
+          } else {
+            $('#message-content').html('TA好像对你没XING趣<br>分享到<em>朋友圈</em>然后洗洗睡吧');
+          }
         } else if (data.status == 'success') {
-          alert('success');
+          $('#message-content').html('<em>TA也对你有XING趣！</em><br>赶紧行动约TA过七夕吧！<br>然后分享到<em>朋友圈</em>炫耀一下');
         }
+        $('#message').show().animate({opacity : 1}, 500);
       });
     }
 
