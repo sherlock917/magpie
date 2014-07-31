@@ -3,8 +3,8 @@ $(document).on('ready', function () {
   var img  = 'http://scauhci.qiniudn.com/magpie.jpg';
   var link = 'http://magpie.scauhci.org/';
   var appid = '';
-  var title = '';
-  var desc = '这里是描述';
+  var title = '陪我过七夕？';
+  var desc = '看看你想共度七夕的那个TA是不是也想和你共度七夕';
 
   $('#submit').on('click', function () {
     var marco = $('#marco').val();
