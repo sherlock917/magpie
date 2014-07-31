@@ -39,6 +39,7 @@ $(document).on('ready', function () {
     $('#message').animate({opacity : 0}, 500, function () {
       $(this).hide();
       $('#polo').val('');
+      $('#submit').text('看看TA想不想跟你过七夕');
     });
     return false;
   });
