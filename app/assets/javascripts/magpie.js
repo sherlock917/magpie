@@ -11,6 +11,12 @@ $(document).on('ready', function () {
     var polo = $('#polo').val();
 
     if (marco != '' && polo != '') {
+
+      if (marco == polo) {
+        alert('真的要酱紫自我安慰么？');
+        return false;
+      }
+
       $(this).text('努力寻找中。。。');
       $.get('/seek/' + marco + '/' + polo, function(data) {
         if (data.status == 'empty') {
